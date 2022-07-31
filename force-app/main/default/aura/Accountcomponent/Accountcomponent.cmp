@@ -1,0 +1,17 @@
+<aura:component controller="DemoHelper" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="accountList" type="Account[]"/>
+     <p onclick="{!c.myAction}"> Click me</p>
+    <lightning:button onclick="{!c.myAction}" label="Show account list" /><br/>
+    <aura:iteration items="{!v.accountList}" var="a" >
+         <div class="slds-card">
+             <div class="slds-media__figure">
+                 <lightning:icon iconName="action:approval" size="small" />
+             </div>
+                     <div class="slds-card__header slds-grid">{!a.Name}  &nbsp; &nbsp; &nbsp; &nbsp; </div>
+                     <div class="background"> {!a.phone} &nbsp; &nbsp; &nbsp; &nbsp; </div>            
+                     <div class="background"> {!a.Fax} &nbsp; &nbsp; &nbsp; &nbsp; </div>
+                     <div class="background"> {!a.Type} &nbsp; &nbsp; &nbsp; &nbsp; </div>
+                     <br/>
+             </div>       
+             </aura:iteration>                                
+ </aura:component>

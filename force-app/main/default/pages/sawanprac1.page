@@ -1,0 +1,13 @@
+<apex:page StandardController="Account" Sidebar="False">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection collapsible="False" title="My Section">
+<apex:inputField value="{!account.name}"/>
+<apex:inputField value="{!account.Type}"/>
+<apex:inputField value="{!account.Phone}"/>
+<apex:inputField value="{!account.Industry}"/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

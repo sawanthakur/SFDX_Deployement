@@ -1,0 +1,3 @@
+<apex:page StandardController="Account" Sidebar="False">
+<apex:image id="Ofline" value="{!$Resource.OfflineTest}" width="500" height="200"/>
+</apex:page>

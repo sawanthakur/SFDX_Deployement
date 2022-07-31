@@ -1,0 +1,40 @@
+<apex:page controller="Searchemp" sidebar="false">
+
+  <apex:form >
+
+  <apex:PageBlock >
+
+ <apex:PageBlockSection >
+
+  <apex:PageBlockSectionItem >
+
+  <apex:outputLabel > Name</apex:outputLabel>
+
+  <apex:inputText value="{!name}"/>
+
+  </apex:PageBlockSectionItem>
+  
+ <apex:commandButton value="Go" action="{!executeSearch}"/>
+
+  </apex:PageBlockSection>
+
+  <apex:PageBlockTable var="act" value="{!myid}">
+
+  <apex:column value="{!act.name}"/> 
+
+  <apex:column value="{!act.Employee_ID__c}"/>
+  <apex:column value="{!act.PinCode__c}"/>
+
+  </apex:PageBlockTable>
+
+  </apex:PageBlock>
+
+  <apex:PageBlock >
+
+  <!--apex:commandButton value="Edit" action="{!edit}"/-->
+
+  </apex:PageBlock>
+
+  </apex:form>
+
+</apex:page>

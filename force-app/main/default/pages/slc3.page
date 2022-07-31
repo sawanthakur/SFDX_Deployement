@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" recordSetVar="ops">
+     <apex:form >
+         <apex:pageBlock title="List of Opportunities">
+             <apex:pageBlockTable value="{!ops}" var="o">
+                  <apex:column value="{!o.Name}"/>
+                  <apex:column value="{!o.Account.Name}"/>
+                  <apex:column value="{!o.Account.Phone}"/>
+                  <apex:column value="{!o.Probability}"/>
+                  <apex:column value="{!o.StageName}"/>
+                 
+             </apex:pageBlockTable>
+             <apex:inlineEditSupport />
+         </apex:pageBlock>
+         <apex:commandButton value="Save All" action="{!QuickSave}" />
+     </apex:form>>
+</apex:page>

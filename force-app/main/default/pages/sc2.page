@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity">
+ 
+ Name= {!Opportunity.Name} <br/>
+ Amount={!Opportunity.Amount} <br/>
+ Stage={!Opportunity.StageNAme} <br/>
+ 
+</apex:page>

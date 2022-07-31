@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickAction" 
+                controller="SFIntegrationSettingController" access="global" >
+    <aura:attribute name="title" type="String" default="Select Integration Setting to transfer data"/>
+    
+    <aura:attribute name="sfIntegrationSetting" type="Object"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div > <!-- class="slds-p-around_x-large" -->
+        <lightning:card>
+            <aura:set attribute="title">
+                <lightning:icon iconName="utility:product_transfer" size="small"/>
+                {!v.title}
+            </aura:set>
+            
+            <div class="slds-p-left_medium">         
+                <lightning:input type="checkbox" label="SF1 To SF2" 
+                                 aura:id="dsableToSdinfo" value="{!v.sfIntegrationSetting.Org_dsable_to_sdinfo1__c}" 
+                                 checked="{!v.sfIntegrationSetting.Org_dsable_to_sdinfo1__c}" onchange="{!c.handleChange}"/>
+                
+                <lightning:input type="checkbox" label="SF2 To SF1" 
+                                 aura:id="sdinfoToDsable" value="{!v.sfIntegrationSetting.Org_sdinfo1_To_dsable__c}" 
+                                 checked="{!v.sfIntegrationSetting.Org_sdinfo1_To_dsable__c}" onchange="{!c.handleChange}"/>
+                
+                <lightning:input type="checkbox" label="Allow To Both Org" 
+                                 aura:id="bothWay" value="{!v.sfIntegrationSetting.Allow_To_Both__c}" 
+                                 checked="{!v.sfIntegrationSetting.Allow_To_Both__c}" onchange="{!c.handleChange}"/>
+                
+                <lightning:input type="checkbox" label="Sync on Schedule Time" 
+                                 aura:id="scheduleTime" value="{!v.sfIntegrationSetting.Sync_on_Schedule_Time__c}" 
+                                 checked="{!v.sfIntegrationSetting.Sync_on_Schedule_Time__c}" onchange="{!c.handleChange}"/>
+            </div>
+            
+            <aura:set attribute="footer">
+                <lightning:button variant="brand" label="Submit" title="Submit" onclick="{!c.handleSubmit}" />
+            </aura:set>
+        </lightning:card>
+    </div>
+    
+</aura:component>
